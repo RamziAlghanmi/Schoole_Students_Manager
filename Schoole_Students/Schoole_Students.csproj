@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{99306724-FD22-4416-90A8-2A5C9AD5F585}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Schoole_Students</RootNamespace>
+    <AssemblyName>Schoole_Students</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\Libraries\Bunifu\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CLASSROOMS.cs">
+      <DependentUpon>Schoole.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClassRooms\Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassRooms\Add.Designer.cs">
+      <DependentUpon>Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassRooms\ClassRoomsManager.cs" />
+    <Compile Include="ClassRooms\ClassRoom.cs" />
+    <Compile Include="ClassRooms\ClassRoomManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassRooms\ClassRoomManager.Designer.cs">
+      <DependentUpon>ClassRoomManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassRooms\Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassRooms\Delete.Designer.cs">
+      <DependentUpon>Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassRooms\IClassRooms.cs" />
+    <Compile Include="ClassRooms\Show.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassRooms\Show.Designer.cs">
+      <DependentUpon>Show.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassRooms\Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassRooms\Update.Designer.cs">
+      <DependentUpon>Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GRADS.cs">
+      <DependentUpon>Schoole.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Grads\Grad.cs" />
+    <Compile Include="Grads\IGrads.cs" />
+    <Compile Include="IManager.cs" />
+    <Compile Include="MainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainPage.Designer.cs">
+      <DependentUpon>MainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grads\Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grads\Add.Designer.cs">
+      <DependentUpon>Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grads\CreateResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grads\CreateResult.Designer.cs">
+      <DependentUpon>CreateResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grads\GradManaager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grads\GradManaager.Designer.cs">
+      <DependentUpon>GradManaager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grads\GradsManager.cs" />
+    <Compile Include="Grads\Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grads\Update.Designer.cs">
+      <DependentUpon>Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Grads\Result.cs" />
+    <Compile Include="Schoole.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Schoole.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Schoole.cs" />
+    <Compile Include="Schoole.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Schoole.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Schoole1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Schoole.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STUDENTS.cs">
+      <DependentUpon>Schoole.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Students\Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Students\Add.Designer.cs">
+      <DependentUpon>Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Students\Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Students\Delete.Designer.cs">
+      <DependentUpon>Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Students\IStudents.cs" />
+    <Compile Include="Students\Show.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Students\Show.Designer.cs">
+      <DependentUpon>Show.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Students\Student.cs" />
+    <Compile Include="Students\StudentManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Students\StudentManager.Designer.cs">
+      <DependentUpon>StudentManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Students\StudentsManager.cs" />
+    <Compile Include="Students\Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Students\Update.Designer.cs">
+      <DependentUpon>Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SUBJECTS.cs">
+      <DependentUpon>Schoole.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Subjects\Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subjects\Add.Designer.cs">
+      <DependentUpon>Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Subjects\Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subjects\Delete.Designer.cs">
+      <DependentUpon>Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Subjects\ISubjects.cs" />
+    <Compile Include="Subjects\Show.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subjects\Show.Designer.cs">
+      <DependentUpon>Show.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Subjects\Subject.cs" />
+    <Compile Include="Subjects\SubjectManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subjects\SubjectManager.Designer.cs">
+      <DependentUpon>SubjectManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Subjects\SubjectsManager.cs" />
+    <Compile Include="Table.cs">
+      <DependentUpon>Schoole.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ClassRooms\Add.resx">
+      <DependentUpon>Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClassRooms\ClassRoomManager.resx">
+      <DependentUpon>ClassRoomManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClassRooms\Delete.resx">
+      <DependentUpon>Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClassRooms\Show.resx">
+      <DependentUpon>Show.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClassRooms\Update.resx">
+      <DependentUpon>Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainPage.resx">
+      <DependentUpon>MainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Students\Add.resx">
+      <DependentUpon>Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Students\Delete.resx">
+      <DependentUpon>Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Students\Show.resx">
+      <DependentUpon>Show.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Students\StudentManager.resx">
+      <DependentUpon>StudentManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Students\Update.resx">
+      <DependentUpon>Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EntityDeploy Include="Schoole.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Schoole.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Schoole.edmx.diagram">
+      <DependentUpon>Schoole.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Schoole.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Schoole.edmx</DependentUpon>
+      <LastGenOutput>Schoole.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Schoole.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Schoole.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Schoole.edmx</DependentUpon>
+      <LastGenOutput>Schoole1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Schoole_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Schoole.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

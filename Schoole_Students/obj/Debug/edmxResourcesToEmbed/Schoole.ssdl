@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SchooleNameSpace.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CLASSROOMS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="30" />
+    <Property Name="MAXCAPACITY" Type="int" />
+  </EntityType>
+  <EntityType Name="GRADS">
+    <Key>
+      <PropertyRef Name="SUBJECT_ID" />
+      <PropertyRef Name="STUDENT_ID" />
+    </Key>
+    <Property Name="SUBJECT_ID" Type="int" Nullable="false" />
+    <Property Name="STUDENT_ID" Type="int" Nullable="false" />
+    <Property Name="VALUE" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="STUDENTS">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="EMAILE" Type="nvarchar" MaxLength="30" />
+    <Property Name="ADDRESS" Type="nvarchar" MaxLength="30" />
+    <Property Name="PHONE" Type="nvarchar" MaxLength="12" />
+    <Property Name="PHOTO" Type="image" />
+    <Property Name="GENDER" Type="nvarchar" MaxLength="8" />
+    <Property Name="BIRTH" Type="datetime" />
+    <Property Name="CLASS_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SUBJECTS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="30" />
+    <Property Name="AUTHER" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="CLASS_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="GR_STUDENT_ID_FK">
+    <End Role="STUDENTS" Type="Self.STUDENTS" Multiplicity="1" />
+    <End Role="GRADS" Type="Self.GRADS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STUDENTS">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GRADS">
+        <PropertyRef Name="STUDENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GR_SUBJECT_ID_FK">
+    <End Role="SUBJECTS" Type="Self.SUBJECTS" Multiplicity="1" />
+    <End Role="GRADS" Type="Self.GRADS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SUBJECTS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GRADS">
+        <PropertyRef Name="SUBJECT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ST_CLASS_ID_FK">
+    <End Role="CLASSROOMS" Type="Self.CLASSROOMS" Multiplicity="1" />
+    <End Role="STUDENTS" Type="Self.STUDENTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLASSROOMS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="STUDENTS">
+        <PropertyRef Name="CLASS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SU_CLASS_ID_FK">
+    <End Role="CLASSROOMS" Type="Self.CLASSROOMS" Multiplicity="0..1" />
+    <End Role="SUBJECTS" Type="Self.SUBJECTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLASSROOMS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SUBJECTS">
+        <PropertyRef Name="CLASS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SchooleNameSpaceStoreContainer">
+    <EntitySet Name="CLASSROOMS" EntityType="Self.CLASSROOMS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GRADS" EntityType="Self.GRADS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="STUDENTS" EntityType="Self.STUDENTS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SUBJECTS" EntityType="Self.SUBJECTS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="GR_STUDENT_ID_FK" Association="Self.GR_STUDENT_ID_FK">
+      <End Role="STUDENTS" EntitySet="STUDENTS" />
+      <End Role="GRADS" EntitySet="GRADS" />
+    </AssociationSet>
+    <AssociationSet Name="GR_SUBJECT_ID_FK" Association="Self.GR_SUBJECT_ID_FK">
+      <End Role="SUBJECTS" EntitySet="SUBJECTS" />
+      <End Role="GRADS" EntitySet="GRADS" />
+    </AssociationSet>
+    <AssociationSet Name="ST_CLASS_ID_FK" Association="Self.ST_CLASS_ID_FK">
+      <End Role="CLASSROOMS" EntitySet="CLASSROOMS" />
+      <End Role="STUDENTS" EntitySet="STUDENTS" />
+    </AssociationSet>
+    <AssociationSet Name="SU_CLASS_ID_FK" Association="Self.SU_CLASS_ID_FK">
+      <End Role="CLASSROOMS" EntitySet="CLASSROOMS" />
+      <End Role="SUBJECTS" EntitySet="SUBJECTS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

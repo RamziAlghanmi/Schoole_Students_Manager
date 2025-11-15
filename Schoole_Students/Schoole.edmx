@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SchooleNameSpace.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CLASSROOMS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="30" />
+          <Property Name="MAXCAPACITY" Type="int" />
+        </EntityType>
+        <EntityType Name="GRADS">
+          <Key>
+            <PropertyRef Name="SUBJECT_ID" />
+            <PropertyRef Name="STUDENT_ID" />
+          </Key>
+          <Property Name="SUBJECT_ID" Type="int" Nullable="false" />
+          <Property Name="STUDENT_ID" Type="int" Nullable="false" />
+          <Property Name="VALUE" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="STUDENTS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="EMAILE" Type="nvarchar" MaxLength="30" />
+          <Property Name="ADDRESS" Type="nvarchar" MaxLength="30" />
+          <Property Name="PHONE" Type="nvarchar" MaxLength="12" />
+          <Property Name="PHOTO" Type="image" />
+          <Property Name="GENDER" Type="nvarchar" MaxLength="8" />
+          <Property Name="BIRTH" Type="datetime" />
+          <Property Name="CLASS_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SUBJECTS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="30" />
+          <Property Name="AUTHER" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="CLASS_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="GR_STUDENT_ID_FK">
+          <End Role="STUDENTS" Type="Self.STUDENTS" Multiplicity="1" />
+          <End Role="GRADS" Type="Self.GRADS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STUDENTS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GRADS">
+              <PropertyRef Name="STUDENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GR_SUBJECT_ID_FK">
+          <End Role="SUBJECTS" Type="Self.SUBJECTS" Multiplicity="1" />
+          <End Role="GRADS" Type="Self.GRADS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUBJECTS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GRADS">
+              <PropertyRef Name="SUBJECT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ST_CLASS_ID_FK">
+          <End Role="CLASSROOMS" Type="Self.CLASSROOMS" Multiplicity="1" />
+          <End Role="STUDENTS" Type="Self.STUDENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASSROOMS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="STUDENTS">
+              <PropertyRef Name="CLASS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SU_CLASS_ID_FK">
+          <End Role="CLASSROOMS" Type="Self.CLASSROOMS" Multiplicity="0..1" />
+          <End Role="SUBJECTS" Type="Self.SUBJECTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASSROOMS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SUBJECTS">
+              <PropertyRef Name="CLASS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SchooleNameSpaceStoreContainer">
+          <EntitySet Name="CLASSROOMS" EntityType="Self.CLASSROOMS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GRADS" EntityType="Self.GRADS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STUDENTS" EntityType="Self.STUDENTS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SUBJECTS" EntityType="Self.SUBJECTS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="GR_STUDENT_ID_FK" Association="Self.GR_STUDENT_ID_FK">
+            <End Role="STUDENTS" EntitySet="STUDENTS" />
+            <End Role="GRADS" EntitySet="GRADS" />
+          </AssociationSet>
+          <AssociationSet Name="GR_SUBJECT_ID_FK" Association="Self.GR_SUBJECT_ID_FK">
+            <End Role="SUBJECTS" EntitySet="SUBJECTS" />
+            <End Role="GRADS" EntitySet="GRADS" />
+          </AssociationSet>
+          <AssociationSet Name="ST_CLASS_ID_FK" Association="Self.ST_CLASS_ID_FK">
+            <End Role="CLASSROOMS" EntitySet="CLASSROOMS" />
+            <End Role="STUDENTS" EntitySet="STUDENTS" />
+          </AssociationSet>
+          <AssociationSet Name="SU_CLASS_ID_FK" Association="Self.SU_CLASS_ID_FK">
+            <End Role="CLASSROOMS" EntitySet="CLASSROOMS" />
+            <End Role="SUBJECTS" EntitySet="SUBJECTS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SchooleNameSpace" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CLASSROOMS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MAXCAPACITY" Type="Int32" />
+          <NavigationProperty Name="STUDENTS" Relationship="Self.ST_CLASS_ID_FK" FromRole="CLASSROOMS" ToRole="STUDENTS" />
+          <NavigationProperty Name="SUBJECTS" Relationship="Self.SU_CLASS_ID_FK" FromRole="CLASSROOMS" ToRole="SUBJECTS" />
+        </EntityType>
+        <EntityType Name="GRADS">
+          <Key>
+            <PropertyRef Name="SUBJECT_ID" />
+            <PropertyRef Name="STUDENT_ID" />
+          </Key>
+          <Property Name="SUBJECT_ID" Type="Int32" Nullable="false" />
+          <Property Name="STUDENT_ID" Type="Int32" Nullable="false" />
+          <Property Name="VALUE" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="STUDENTS" Relationship="Self.GR_STUDENT_ID_FK" FromRole="GRADS" ToRole="STUDENTS" />
+          <NavigationProperty Name="SUBJECTS" Relationship="Self.GR_SUBJECT_ID_FK" FromRole="GRADS" ToRole="SUBJECTS" />
+        </EntityType>
+        <EntityType Name="STUDENTS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EMAILE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="GENDER" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="BIRTH" Type="DateTime" Precision="3" />
+          <Property Name="CLASS_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CLASSROOMS" Relationship="Self.ST_CLASS_ID_FK" FromRole="STUDENTS" ToRole="CLASSROOMS" />
+          <NavigationProperty Name="GRADS" Relationship="Self.GR_STUDENT_ID_FK" FromRole="STUDENTS" ToRole="GRADS" />
+        </EntityType>
+        <EntityType Name="SUBJECTS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="AUTHER" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CLASS_ID" Type="Int32" />
+          <NavigationProperty Name="CLASSROOMS" Relationship="Self.SU_CLASS_ID_FK" FromRole="SUBJECTS" ToRole="CLASSROOMS" />
+          <NavigationProperty Name="GRADS" Relationship="Self.GR_SUBJECT_ID_FK" FromRole="SUBJECTS" ToRole="GRADS" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="ST_CLASS_ID_FK">
+          <End Role="CLASSROOMS" Type="Self.CLASSROOMS" Multiplicity="1" />
+          <End Role="STUDENTS" Type="Self.STUDENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASSROOMS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="STUDENTS">
+              <PropertyRef Name="CLASS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SU_CLASS_ID_FK">
+          <End Role="CLASSROOMS" Type="Self.CLASSROOMS" Multiplicity="0..1" />
+          <End Role="SUBJECTS" Type="Self.SUBJECTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASSROOMS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SUBJECTS">
+              <PropertyRef Name="CLASS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GR_STUDENT_ID_FK">
+          <End Role="STUDENTS" Type="Self.STUDENTS" Multiplicity="1" />
+          <End Role="GRADS" Type="Self.GRADS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STUDENTS">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GRADS">
+              <PropertyRef Name="STUDENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GR_SUBJECT_ID_FK">
+          <End Role="SUBJECTS" Type="Self.SUBJECTS" Multiplicity="1" />
+          <End Role="GRADS" Type="Self.GRADS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUBJECTS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GRADS">
+              <PropertyRef Name="SUBJECT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SchooleDBContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CLASSROOMS" EntityType="Self.CLASSROOMS" />
+          <EntitySet Name="GRADS" EntityType="Self.GRADS" />
+          <EntitySet Name="STUDENTS" EntityType="Self.STUDENTS" />
+          <EntitySet Name="SUBJECTS" EntityType="Self.SUBJECTS" />
+          <EntitySet Name="Table" EntityType="Self.Table" />
+          <AssociationSet Name="ST_CLASS_ID_FK" Association="Self.ST_CLASS_ID_FK">
+            <End Role="CLASSROOMS" EntitySet="CLASSROOMS" />
+            <End Role="STUDENTS" EntitySet="STUDENTS" />
+          </AssociationSet>
+          <AssociationSet Name="SU_CLASS_ID_FK" Association="Self.SU_CLASS_ID_FK">
+            <End Role="CLASSROOMS" EntitySet="CLASSROOMS" />
+            <End Role="SUBJECTS" EntitySet="SUBJECTS" />
+          </AssociationSet>
+          <AssociationSet Name="GR_STUDENT_ID_FK" Association="Self.GR_STUDENT_ID_FK">
+            <End Role="STUDENTS" EntitySet="STUDENTS" />
+            <End Role="GRADS" EntitySet="GRADS" />
+          </AssociationSet>
+          <AssociationSet Name="GR_SUBJECT_ID_FK" Association="Self.GR_SUBJECT_ID_FK">
+            <End Role="SUBJECTS" EntitySet="SUBJECTS" />
+            <End Role="GRADS" EntitySet="GRADS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SchooleNameSpaceStoreContainer" CdmEntityContainer="SchooleDBContext">
+          <EntitySetMapping Name="CLASSROOMS">
+            <EntityTypeMapping TypeName="SchooleNameSpace.CLASSROOMS">
+              <MappingFragment StoreEntitySet="CLASSROOMS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="MAXCAPACITY" ColumnName="MAXCAPACITY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GRADS">
+            <EntityTypeMapping TypeName="SchooleNameSpace.GRADS">
+              <MappingFragment StoreEntitySet="GRADS">
+                <ScalarProperty Name="SUBJECT_ID" ColumnName="SUBJECT_ID" />
+                <ScalarProperty Name="STUDENT_ID" ColumnName="STUDENT_ID" />
+                <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STUDENTS">
+            <EntityTypeMapping TypeName="SchooleNameSpace.STUDENTS">
+              <MappingFragment StoreEntitySet="STUDENTS">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="EMAILE" ColumnName="EMAILE" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+                <ScalarProperty Name="BIRTH" ColumnName="BIRTH" />
+                <ScalarProperty Name="CLASS_ID" ColumnName="CLASS_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUBJECTS">
+            <EntityTypeMapping TypeName="SchooleNameSpace.SUBJECTS">
+              <MappingFragment StoreEntitySet="SUBJECTS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="AUTHER" ColumnName="AUTHER" />
+                <ScalarProperty Name="CLASS_ID" ColumnName="CLASS_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Table">
+            <EntityTypeMapping TypeName="SchooleNameSpace.Table">
+              <MappingFragment StoreEntitySet="Table">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
