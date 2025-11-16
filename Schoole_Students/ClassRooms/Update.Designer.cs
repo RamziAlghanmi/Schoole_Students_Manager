@@ -85,6 +85,7 @@
             this.btnExit.TabIndex = 1;
             this.btnExit.TabStop = false;
             this.btnExit.Zoom = 10;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // bunifuElipseMainFrm
             // 
@@ -105,11 +106,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(543, 465);
+            this.ClientSize = new System.Drawing.Size(543, 471);
             this.Controls.Add(this.pnMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmUpdate";
             this.Text = "Update";
             this.pnMain.ResumeLayout(false);

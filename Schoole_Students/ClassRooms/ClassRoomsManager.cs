@@ -5,24 +5,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Schoole_Students.Students;
+using System.ComponentModel;
 
 namespace Schoole_Students.ClassRooms
 {
     public class ClassRoomsManager : IClassRooms
     {
-        IStudents student_manager = new StudentsManager();
-        public List<ClassRoom> getAllClassRooms(List<Student> all_students)
+        
+        public BindingList<ClassRoom> getAllClassRooms()
         {
-            List<ClassRoom> rooms = new List<ClassRoom>();
-            List<Student> custom_students = new List<Student>();
+            BindingList<ClassRoom> rooms = new BindingList<ClassRoom>();
+            
             using (var class_rooms = new SchooleDBContext())
             {
                
                 var room = class_rooms.CLASSROOMS.ToList();
-                foreach(var cr in room) {
-                    custom_students = getCustomStudents(all_students,cr.ID);
-                    
-                    rooms.Add(new ClassRoom(cr.ID, cr.NAME, cr.MAXCAPACITY, custom_students));
+                foreach(var cr in room) {                   
+                    rooms.Add(new ClassRoom(cr.ID, cr.NAME, cr.MAXCAPACITY));
                 }
             }
                 return rooms;
@@ -58,9 +57,9 @@ namespace Schoole_Students.ClassRooms
             }
         }
 
-        public List<Student> getCustomStudents(List<Student> all_students, int class_id)
+        public BindingList<Student> getCustomStudents(BindingList<Student> all_students, int class_id)
         {
-            List<Student> students = new List<Student>();
+            BindingList<Student> students = new BindingList<Student>();
             foreach (Student st in all_students)
             {
                 if (st.Class_Id == class_id)
@@ -70,7 +69,18 @@ namespace Schoole_Students.ClassRooms
             }
             return students;
         }
-        public bool found(List<ClassRoom> list, int id)
+
+        public Dictionary<int, string> getRoomDictionary(BindingList<ClassRoom> roomList)
+        {
+            Dictionary<int , string > roomDictionary = new Dictionary<int, string>();
+            foreach(ClassRoom room in roomList)
+            {
+                roomDictionary.Add(room.Class_Room_Id, room.Class_Room_Name);
+            }
+            return roomDictionary;
+
+        }
+        public bool found(BindingList<ClassRoom> list, int id)
         {
             for (int i = 0; i < list.Count; i++)
             {
@@ -82,7 +92,7 @@ namespace Schoole_Students.ClassRooms
             return false;
         }
 
-        public int search(List<ClassRoom> list, int id)
+        public int search(BindingList<ClassRoom> list, int id)
         {
             for (int i = 0; i < list.Count; i++)
             {

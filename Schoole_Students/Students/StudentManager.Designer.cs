@@ -129,7 +129,7 @@
             this.btnExit.TabIndex = 1;
             this.btnExit.TabStop = false;
             this.btnExit.Zoom = 10;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // bunifuElipseMainFrm
             // 
@@ -193,7 +193,7 @@
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.Textcolor = System.Drawing.Color.DarkSlateGray;
             this.btnDelete.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.Click += new System.EventHandler(this.btnDeleteStudents_Click);
             // 
             // btnUpdate
             // 
@@ -232,7 +232,7 @@
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.Textcolor = System.Drawing.Color.DarkSlateGray;
             this.btnUpdate.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdateStudents_Click);
             // 
             // btnAdd
             // 
@@ -271,7 +271,7 @@
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.Textcolor = System.Drawing.Color.DarkSlateGray;
             this.btnAdd.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAdd.Click += new System.EventHandler(this.btnAddStudents_Click);
             // 
             // btnShow
             // 
@@ -310,7 +310,7 @@
             this.btnShow.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnShow.Textcolor = System.Drawing.Color.DarkSlateGray;
             this.btnShow.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
+            this.btnShow.Click += new System.EventHandler(this.btnShowStudents_Click);
             // 
             // groupBox1
             // 

@@ -14,29 +14,17 @@ namespace Schoole_Students.Students
 {
     public partial class frmStudentManager : Form
     {
-        List<Grad> grads;
-        List<Student> students;
-        IGrads grads_manager = new GradsManager();
+        IClassRooms rooms_manager = new ClassRoomsManager();
         IStudents students_manager = new StudentsManager();
-        public frmStudentManager(List<Student> students)
-        {
-            InitializeComponent();
-            this.students = students;
-        }
+        BindingList<Student> studentList;
+        Dictionary<int, string> roomDictionary;
 
-        private void loadeGrad() {
-          this.grads = grads_manager.getAllGrads();
-        }
-
-        private void setCustomeGrads(List<Grad> grads) { 
-            foreach(Student sts in students)
-            {
-             sts.grads = students_manager.getGrads(grads, sts.Student_Id);
-            }
-        }
-        private void frmStudentManager_Load(object sender, EventArgs e)
+        public frmStudentManager(BindingList<Student> studentList, Dictionary<int, string> roomDictionary)
         {
-            loadeGrad();
+            InitializeComponent();          
+            this.studentList = studentList;
+            this.roomDictionary = roomDictionary;
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -65,38 +53,38 @@ namespace Schoole_Students.Students
                 WindowState = FormWindowState.Minimized;
         }
 
-        private void btnShow_Click(object sender, EventArgs e)
+        private void btnShowStudents_Click(object sender, EventArgs e)
         {
 
-            frmShowStudents fs = new frmShowStudents(students);
+            frmShowStudents fs = new frmShowStudents(studentList);
             fs.MdiParent = this;
             fs.Show();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnAddStudents_Click(object sender, EventArgs e)
         {
-            frmAddStudent fad = new frmAddStudent();
+            frmAddStudent fad = new frmAddStudent(studentList, roomDictionary);
             fad.MdiParent = this;
             fad.Show();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnUpdateStudents_Click(object sender, EventArgs e)
         {
-            frmUpdateStudent fud = new frmUpdateStudent();
+            frmUpdateStudent fud = new frmUpdateStudent(studentList, roomDictionary);
             fud.MdiParent = this;
             fud.Show();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnDeleteStudents_Click(object sender, EventArgs e)
         {
-            frmDeleteStudent fde = new frmDeleteStudent();
+            frmDeleteStudent fde = new frmDeleteStudent(studentList);
             fde.MdiParent = this;
             fde.Show();
         }
 
-        private void btnExit_Click_1(object sender, EventArgs e)
+        private void frmStudentManager_Load(object sender, EventArgs e)
         {
-            this.Close();
+
         }
     }
 }

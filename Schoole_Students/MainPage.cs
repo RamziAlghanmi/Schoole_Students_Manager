@@ -14,22 +14,21 @@ namespace Schoole_Students
 {
     public partial class frmMainPage : Form
     {
+        IClassRooms rooms_manager= new ClassRoomsManager();
         IStudents students_manager = new StudentsManager();
-        List<Student> students;
+        BindingList<ClassRoom> roomList;          
+        BindingList<Student> studentList;
+        Dictionary< int, string> roomDictionary;
         public frmMainPage()
         {
             InitializeComponent();
            }
         
-        private  void loadeStudents() {
-            this.students =  students_manager.getAllStudents();
-        }
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-        
-
+       
         private void btnMax_Click_1(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Normal)
@@ -66,19 +65,24 @@ namespace Schoole_Students
 
         private void btnStudents_Click(object sender, EventArgs e)
         {
-            frmStudentManager fsm = new frmStudentManager(students);
+            frmStudentManager fsm = new frmStudentManager(studentList, roomDictionary);
             fsm.ShowDialog();
         }
 
         private void btnClassRooms_Click(object sender, EventArgs e)
         {
-            frmClassRoomManager fcrm = new frmClassRoomManager(students);
+            frmClassRoomManager fcrm = new frmClassRoomManager(roomList,studentList);
             fcrm.ShowDialog();
         }
 
         private void frmMainPage_Load(object sender, EventArgs e)
         {
-            loadeStudents();
-        }
+            this.roomList = new BindingList<ClassRoom>(rooms_manager.getAllClassRooms());
+            this.studentList = new BindingList<Student>(students_manager.getAllStudents());
+            this.roomDictionary = new Dictionary<int, string>(rooms_manager.getRoomDictionary(roomList));
+            foreach(ClassRoom room in roomList ) {
+                room.Students = rooms_manager.getCustomStudents(studentList, room.Class_Room_Id);
+            }
+       }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,11 +10,11 @@ namespace Schoole_Students.Students
 {
     public class StudentsManager :IStudents
     {
-       
-        public List <Student> getAllStudents()
-        {           
-            List<Student> students = new List<Student>();
-            using(var g_students   = new SchooleDBContext())
+        
+        public BindingList<Student> getAllStudents()
+        {
+         BindingList<Student> students = new BindingList<Student>();
+            using(var g_students  = new SchooleDBContext())
             {
                 var sts = g_students.STUDENTS.ToList();
                 foreach (var st in sts)
@@ -70,9 +71,9 @@ namespace Schoole_Students.Students
                 g_students.SaveChanges();
             }
             }
-         public List<Grad> getGrads(List<Grad> all_grads, int student_id)
+         public BindingList<Grad> getGrads(BindingList<Grad> all_grads, int student_id)
         {
-            List<Grad> custom_grads = new List<Grad>();
+            BindingList<Grad> custom_grads = new BindingList<Grad>();
             foreach (Grad gr in all_grads) {
                 if (gr.Student_Id == student_id)
                 {
@@ -81,7 +82,7 @@ namespace Schoole_Students.Students
             }
             return custom_grads;
         }
-        public bool found(List<Student> list, int id)
+        public bool found(BindingList<Student> list, int id)
         {
             for (int i = 0; i < list.Count; i++)
             {
@@ -93,7 +94,7 @@ namespace Schoole_Students.Students
             return false;
         }
 
-        public int search(List<Student> list, int id)
+        public int search(BindingList<Student> list, int id)
         {
             for (int i = 0; i < list.Count; i++)
             {

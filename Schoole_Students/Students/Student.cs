@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace Schoole_Students
         public string Student_Gender { get; set; }
         public DateTime? Student_Date { get; set; }
         public int Class_Id { get; set; }
-        public List<Grad> grads { get; set; }
+        public BindingList<Grad> grads { get; set; }
 
         public Student(string student_Name,
             string student_Address, DateTime? student_Date,
@@ -64,7 +65,7 @@ namespace Schoole_Students
            string student_Phone,
            string Student_Gender,
            string student_Emaile,
-           List<Grad> grads
+           BindingList<Grad> grads
           )
        : this(id,student_Name, student_Address, student_Date, class_id, student_Photo,
             student_Phone, Student_Gender, student_Emaile)

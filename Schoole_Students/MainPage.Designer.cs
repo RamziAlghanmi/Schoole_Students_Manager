@@ -68,7 +68,7 @@
             this.pnMain.Margin = new System.Windows.Forms.Padding(0);
             this.pnMain.Name = "pnMain";
             this.pnMain.Quality = 10;
-            this.pnMain.Size = new System.Drawing.Size(505, 47);
+            this.pnMain.Size = new System.Drawing.Size(819, 47);
             this.pnMain.TabIndex = 0;
             // 
             // labMain
@@ -77,7 +77,7 @@
             this.labMain.BackColor = System.Drawing.Color.CadetBlue;
             this.labMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labMain.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.labMain.Location = new System.Drawing.Point(132, 9);
+            this.labMain.Location = new System.Drawing.Point(289, 9);
             this.labMain.Name = "labMain";
             this.labMain.Size = new System.Drawing.Size(210, 29);
             this.labMain.TabIndex = 4;
@@ -91,7 +91,7 @@
             this.btnMin.BackColor = System.Drawing.Color.DarkCyan;
             this.btnMin.Image = ((System.Drawing.Image)(resources.GetObject("btnMin.Image")));
             this.btnMin.ImageActive = null;
-            this.btnMin.Location = new System.Drawing.Point(401, 3);
+            this.btnMin.Location = new System.Drawing.Point(715, 3);
             this.btnMin.Name = "btnMin";
             this.btnMin.Size = new System.Drawing.Size(31, 41);
             this.btnMin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -106,7 +106,7 @@
             this.btnMax.BackColor = System.Drawing.Color.CadetBlue;
             this.btnMax.Image = ((System.Drawing.Image)(resources.GetObject("btnMax.Image")));
             this.btnMax.ImageActive = null;
-            this.btnMax.Location = new System.Drawing.Point(434, 3);
+            this.btnMax.Location = new System.Drawing.Point(748, 3);
             this.btnMax.Margin = new System.Windows.Forms.Padding(0);
             this.btnMax.Name = "btnMax";
             this.btnMax.Size = new System.Drawing.Size(31, 41);
@@ -122,7 +122,7 @@
             this.btnExit.BackColor = System.Drawing.Color.Transparent;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageActive = null;
-            this.btnExit.Location = new System.Drawing.Point(468, 3);
+            this.btnExit.Location = new System.Drawing.Point(782, 3);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(31, 41);
             this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -141,9 +141,9 @@
             this.groupBox1.Controls.Add(this.btnClassRooms);
             this.groupBox1.Controls.Add(this.btnSubjects);
             this.groupBox1.Controls.Add(this.btnHome);
-            this.groupBox1.Location = new System.Drawing.Point(249, 50);
+            this.groupBox1.Location = new System.Drawing.Point(563, 50);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(250, 462);
+            this.groupBox1.Size = new System.Drawing.Size(250, 539);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.MouseHover += new System.EventHandler(this.groupBox1_MouseHover);
@@ -245,7 +245,7 @@
             this.btnSubjects.IconZoom = 70D;
             this.btnSubjects.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.btnSubjects.IsTab = false;
-            this.btnSubjects.Location = new System.Drawing.Point(6, 347);
+            this.btnSubjects.Location = new System.Drawing.Point(6, 424);
             this.btnSubjects.Name = "btnSubjects";
             this.btnSubjects.Normalcolor = System.Drawing.Color.CadetBlue;
             this.btnSubjects.OnHovercolor = System.Drawing.Color.Teal;
@@ -290,7 +290,7 @@
             this.btnHome.OnHoverTextColor = System.Drawing.Color.White;
             this.btnHome.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnHome.selected = true;
-            this.btnHome.Size = new System.Drawing.Size(238, 57);
+            this.btnHome.Size = new System.Drawing.Size(238, 67);
             this.btnHome.TabIndex = 0;
             this.btnHome.Text = "القائمة الرئيسية";
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -323,7 +323,7 @@
             this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.groupBox2.Location = new System.Drawing.Point(12, 50);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(231, 462);
+            this.groupBox2.Size = new System.Drawing.Size(545, 539);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
@@ -333,7 +333,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.CausesValidation = false;
-            this.ClientSize = new System.Drawing.Size(505, 470);
+            this.ClientSize = new System.Drawing.Size(819, 547);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pnMain);

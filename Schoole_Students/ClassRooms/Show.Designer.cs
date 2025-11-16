@@ -63,7 +63,7 @@
             this.pnMain.Margin = new System.Windows.Forms.Padding(0);
             this.pnMain.Name = "pnMain";
             this.pnMain.Quality = 10;
-            this.pnMain.Size = new System.Drawing.Size(550, 47);
+            this.pnMain.Size = new System.Drawing.Size(558, 47);
             this.pnMain.TabIndex = 5;
             // 
             // btnMin
@@ -72,7 +72,7 @@
             this.btnMin.BackColor = System.Drawing.Color.DarkCyan;
             this.btnMin.Image = ((System.Drawing.Image)(resources.GetObject("btnMin.Image")));
             this.btnMin.ImageActive = null;
-            this.btnMin.Location = new System.Drawing.Point(445, 3);
+            this.btnMin.Location = new System.Drawing.Point(453, 3);
             this.btnMin.Name = "btnMin";
             this.btnMin.Size = new System.Drawing.Size(31, 41);
             this.btnMin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -87,7 +87,7 @@
             this.btnMax.BackColor = System.Drawing.Color.CadetBlue;
             this.btnMax.Image = ((System.Drawing.Image)(resources.GetObject("btnMax.Image")));
             this.btnMax.ImageActive = null;
-            this.btnMax.Location = new System.Drawing.Point(479, 3);
+            this.btnMax.Location = new System.Drawing.Point(487, 3);
             this.btnMax.Margin = new System.Windows.Forms.Padding(0);
             this.btnMax.Name = "btnMax";
             this.btnMax.Size = new System.Drawing.Size(31, 41);
@@ -103,7 +103,7 @@
             this.labMain.BackColor = System.Drawing.Color.CadetBlue;
             this.labMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labMain.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.labMain.Location = new System.Drawing.Point(124, 9);
+            this.labMain.Location = new System.Drawing.Point(128, 9);
             this.labMain.Name = "labMain";
             this.labMain.Size = new System.Drawing.Size(258, 29);
             this.labMain.TabIndex = 4;
@@ -117,7 +117,7 @@
             this.btnExit.BackColor = System.Drawing.Color.Transparent;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageActive = null;
-            this.btnExit.Location = new System.Drawing.Point(513, 3);
+            this.btnExit.Location = new System.Drawing.Point(521, 3);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(31, 41);
             this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -157,19 +157,21 @@
             this.dgvClassRooms.Name = "dgvClassRooms";
             this.dgvClassRooms.ReadOnly = true;
             this.dgvClassRooms.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgvClassRooms.Size = new System.Drawing.Size(532, 448);
+            this.dgvClassRooms.Size = new System.Drawing.Size(540, 437);
             this.dgvClassRooms.TabIndex = 6;
             // 
             // frmShow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 510);
+            this.ClientSize = new System.Drawing.Size(558, 499);
             this.Controls.Add(this.dgvClassRooms);
             this.Controls.Add(this.pnMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmShow";
             this.Text = "Show";
             this.Load += new System.EventHandler(this.frmShow_Load);

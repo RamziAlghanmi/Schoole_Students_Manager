@@ -14,12 +14,13 @@ namespace Schoole_Students.ClassRooms
     
     public partial class frmShow : Form
     {
-        public frmShow(List<ClassRoom> rooms)
+        IClassRooms rooms_manager = new ClassRoomsManager();
+        BindingList<ClassRoom> rooms;
+        public frmShow(BindingList<ClassRoom> rooms)
         {
             InitializeComponent();
-            this.roomList = rooms;
+            this.rooms = rooms;
         }
-        List<ClassRoom> roomList = new List<ClassRoom>();
        
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -28,28 +29,20 @@ namespace Schoole_Students.ClassRooms
 
         private void btnMax_Click(object sender, EventArgs e)
         {
-            if (WindowState == FormWindowState.Normal)
-            {
-                WindowState = FormWindowState.Maximized;
-            }
-            else
-                WindowState = FormWindowState.Normal;
+            this.Size = new System.Drawing.Size(1100, 700);
         }
 
+      
         private void btnMin_Click(object sender, EventArgs e)
         {
-            if (WindowState == FormWindowState.Minimized)
-            {
-                WindowState = FormWindowState.Normal;
-            }
-            else
-                WindowState = FormWindowState.Minimized;
+            this.Size = new System.Drawing.Size( 560, 500);
         }
 
         private void frmShow_Load(object sender, EventArgs e)
         {
+          
             dgvClassRooms.DataSource = null;
-            dgvClassRooms.DataSource = roomList;
+            dgvClassRooms.DataSource = rooms;
         }
     }
 }

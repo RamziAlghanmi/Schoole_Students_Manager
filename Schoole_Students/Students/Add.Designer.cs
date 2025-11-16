@@ -36,6 +36,7 @@
             this.bunifuElipseMainFrm = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipseMainLab = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipseBtnMin = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.cbxRooms = new System.Windows.Forms.ComboBox();
             this.pnMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.SuspendLayout();
@@ -102,17 +103,30 @@
             this.bunifuElipseBtnMin.ElipseRadius = 10;
             this.bunifuElipseBtnMin.TargetControl = this;
             // 
+            // cbxRooms
+            // 
+            this.cbxRooms.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbxRooms.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxRooms.FormattingEnabled = true;
+            this.cbxRooms.Location = new System.Drawing.Point(355, 79);
+            this.cbxRooms.Name = "cbxRooms";
+            this.cbxRooms.Size = new System.Drawing.Size(240, 32);
+            this.cbxRooms.TabIndex = 11;
+            this.cbxRooms.SelectedIndexChanged += new System.EventHandler(this.cbxRooms_SelectedIndexChanged);
+            // 
             // frmAddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(607, 475);
+            this.Controls.Add(this.cbxRooms);
             this.Controls.Add(this.pnMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmAddStudent";
             this.Text = "Add";
+            this.Load += new System.EventHandler(this.frmAddStudent_Load);
             this.pnMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.ResumeLayout(false);
@@ -127,5 +141,6 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipseMainFrm;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipseMainLab;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipseBtnMin;
+        private System.Windows.Forms.ComboBox cbxRooms;
     }
 }

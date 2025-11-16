@@ -24,6 +24,6 @@ D:\Working Files\C#\Schoole_Students Manager\Schoole_Students\obj\Debug\Schoole_
 D:\Working Files\C#\Schoole_Students Manager\Schoole_Students\obj\Debug\Schoole_Students.ClassRooms.frmUpdate.resources
 D:\Working Files\C#\Schoole_Students Manager\Schoole_Students\obj\Debug\Schoole_Students.Students.frmStudentManager.resources
 D:\Working Files\C#\Schoole_Students Manager\Schoole_Students\obj\Debug\Schoole_Students.Students.frmShowStudents.resources
-D:\Working Files\C#\Schoole_Students Manager\Schoole_Students\obj\Debug\Schoole_Students.Students.frmUpdate.resources
-D:\Working Files\C#\Schoole_Students Manager\Schoole_Students\obj\Debug\Schoole_Students.Students.Add.resources
-D:\Working Files\C#\Schoole_Students Manager\Schoole_Students\obj\Debug\Schoole_Students.Students.Delete.resources
+D:\Working Files\C#\Schoole_Students Manager\Schoole_Students\obj\Debug\Schoole_Students.Students.frmAddStudent.resources
+D:\Working Files\C#\Schoole_Students Manager\Schoole_Students\obj\Debug\Schoole_Students.Students.frmDeleteStudent.resources
+D:\Working Files\C#\Schoole_Students Manager\Schoole_Students\obj\Debug\Schoole_Students.Students.frmUpdateStudent.resources

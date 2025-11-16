@@ -12,9 +12,13 @@ namespace Schoole_Students.ClassRooms
 {
     public partial class frmAdd : Form
     {
-        public frmAdd()
+        IClassRooms rooms_manager = new ClassRoomsManager();
+        BindingList<ClassRoom> roomList;
+        Student Student;
+        public frmAdd(BindingList<ClassRoom> rooms)
         {
             InitializeComponent();
+            this.roomList = rooms;
         }
 
         private void btnExit_Click(object sender, EventArgs e)

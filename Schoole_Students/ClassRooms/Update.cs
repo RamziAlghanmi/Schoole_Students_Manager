@@ -12,9 +12,17 @@ namespace Schoole_Students.ClassRooms
 {
     public partial class frmUpdate : Form
     {
-        public frmUpdate()
+        IClassRooms rooms_manager =new ClassRoomsManager();
+        BindingList<ClassRoom> roomList;
+        public frmUpdate(BindingList<ClassRoom> roomList)
         {
             InitializeComponent();
+            this.roomList = roomList;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

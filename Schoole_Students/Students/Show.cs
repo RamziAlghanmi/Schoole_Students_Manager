@@ -12,11 +12,14 @@ namespace Schoole_Students.Students
 {
     public partial class frmShowStudents : Form
     {
-        List<Student> students;
-        public frmShowStudents( List<Student> students)
+        IStudents students_manager = new StudentsManager();
+        BindingList<Student> studentList;
+        Dictionary<int, string> roomDictionary;
+       
+        public frmShowStudents(BindingList<Student> studentList)
         {
             InitializeComponent();
-            this.students = students;
+            this.studentList = studentList;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -26,28 +29,19 @@ namespace Schoole_Students.Students
 
         private void btnMax_Click(object sender, EventArgs e)
         {
-            if (WindowState == FormWindowState.Normal)
-            {
-                WindowState = FormWindowState.Maximized;
-            }
-            else
-                WindowState = FormWindowState.Normal;
+            this.Size = new System.Drawing.Size(1100, 700);
         }
 
         private void btnMin_Click(object sender, EventArgs e)
         {
-            if (WindowState == FormWindowState.Minimized)
-            {
-                WindowState = FormWindowState.Normal;
-            }
-            else
-                WindowState = FormWindowState.Minimized;
+            this.Size = new System.Drawing.Size(560, 500);
         }
 
         private void frmShow_Load(object sender, EventArgs e)
         {
+           
             dgvStudents.DataSource = null;
-            dgvStudents.DataSource = students;
+            dgvStudents.DataSource = studentList;
         }
     }
 }

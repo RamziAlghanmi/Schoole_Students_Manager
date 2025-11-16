@@ -12,19 +12,16 @@ namespace Schoole_Students.ClassRooms
 {
     public partial class frmClassRoomManager : Form
     {
-        List<Student> students;
-        List<ClassRoom> rooms;
         IClassRooms rooms_manager = new ClassRoomsManager();
-        public frmClassRoomManager( List<Student> students)
+        BindingList<ClassRoom> roomList;
+        BindingList<Student> studentList;
+        public frmClassRoomManager(BindingList<ClassRoom> roomList, BindingList<Student> studentList)
         {
             InitializeComponent();
-            this.students = students;
+            this.roomList = roomList;
+            this.studentList = studentList;
         }
         
-        void loadeRooms()
-        {
-           this.rooms = rooms_manager.getAllClassRooms(students);
-        }
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -54,34 +51,34 @@ namespace Schoole_Students.ClassRooms
         private void btnShow_Click(object sender, EventArgs e)
         {
            
-            frmShow fs= new frmShow(rooms);
+            frmShow fs= new frmShow(roomList);
             fs.MdiParent = this;
             fs.Show();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmAdd fad = new frmAdd();
+            frmAdd fad = new frmAdd(roomList);
             fad.MdiParent = this;
             fad.Show();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            frmUpdate fud = new frmUpdate();
+            frmUpdate fud = new frmUpdate(roomList);
             fud.MdiParent = this;
             fud.Show();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            frmDelete fde = new frmDelete();
+            frmDelete fde = new frmDelete(roomList);
             fde.MdiParent = this;
             fde.Show();
         }
         private void frmClassRoomManager_Load(object sender, EventArgs e)
         {
-            loadeRooms();
+         
         }
     }
 }

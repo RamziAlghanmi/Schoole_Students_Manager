@@ -55,7 +55,7 @@
             this.pnMain.Margin = new System.Windows.Forms.Padding(0);
             this.pnMain.Name = "pnMain";
             this.pnMain.Quality = 10;
-            this.pnMain.Size = new System.Drawing.Size(513, 49);
+            this.pnMain.Size = new System.Drawing.Size(606, 49);
             this.pnMain.TabIndex = 10;
             // 
             // labMain
@@ -64,7 +64,7 @@
             this.labMain.BackColor = System.Drawing.Color.CadetBlue;
             this.labMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labMain.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.labMain.Location = new System.Drawing.Point(136, 9);
+            this.labMain.Location = new System.Drawing.Point(183, 9);
             this.labMain.Name = "labMain";
             this.labMain.Size = new System.Drawing.Size(258, 29);
             this.labMain.TabIndex = 4;
@@ -78,7 +78,7 @@
             this.btnExit.BackColor = System.Drawing.Color.Transparent;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageActive = null;
-            this.btnExit.Location = new System.Drawing.Point(476, 3);
+            this.btnExit.Location = new System.Drawing.Point(569, 3);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(31, 41);
             this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -106,11 +106,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 463);
+            this.ClientSize = new System.Drawing.Size(606, 502);
             this.Controls.Add(this.pnMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmDelete";
             this.Text = "Delete";
             this.pnMain.ResumeLayout(false);
