@@ -15,11 +15,13 @@ namespace Schoole_Students.ClassRooms
         IClassRooms rooms_manager = new ClassRoomsManager();
         BindingList<ClassRoom> roomList;
         BindingList<Student> studentList;
-        public frmClassRoomManager(BindingList<ClassRoom> roomList, BindingList<Student> studentList)
+        
+        public frmClassRoomManager(BindingList<ClassRoom> roomList )
         {
             InitializeComponent();
             this.roomList = roomList;
             this.studentList = studentList;
+           
         }
         
         private void btnExit_Click(object sender, EventArgs e)

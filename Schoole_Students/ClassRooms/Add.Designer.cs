@@ -36,6 +36,8 @@
             this.bunifuElipseMainFrm = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipseMainLab = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipseBtnMin = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.btnAdd = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.txtClassName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.pnMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.SuspendLayout();
@@ -102,11 +104,69 @@
             this.bunifuElipseBtnMin.ElipseRadius = 10;
             this.bunifuElipseBtnMin.TargetControl = this;
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdd.BorderRadius = 0;
+            this.btnAdd.ButtonText = "إضافة";
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.DisabledColor = System.Drawing.Color.Gray;
+            this.btnAdd.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnAdd.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnAdd.Iconimage")));
+            this.btnAdd.Iconimage_right = null;
+            this.btnAdd.Iconimage_right_Selected = null;
+            this.btnAdd.Iconimage_Selected = null;
+            this.btnAdd.IconMarginLeft = 0;
+            this.btnAdd.IconMarginRight = 0;
+            this.btnAdd.IconRightVisible = true;
+            this.btnAdd.IconRightZoom = 0D;
+            this.btnAdd.IconVisible = true;
+            this.btnAdd.IconZoom = 90D;
+            this.btnAdd.IsTab = false;
+            this.btnAdd.Location = new System.Drawing.Point(385, 350);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(6);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnAdd.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnAdd.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnAdd.selected = false;
+            this.btnAdd.Size = new System.Drawing.Size(117, 48);
+            this.btnAdd.TabIndex = 10;
+            this.btnAdd.Text = "إضافة";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Textcolor = System.Drawing.Color.White;
+            this.btnAdd.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // txtClassName
+            // 
+            this.txtClassName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtClassName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtClassName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtClassName.HintForeColor = System.Drawing.Color.Empty;
+            this.txtClassName.HintText = "";
+            this.txtClassName.isPassword = false;
+            this.txtClassName.LineFocusedColor = System.Drawing.Color.Blue;
+            this.txtClassName.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtClassName.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.txtClassName.LineThickness = 3;
+            this.txtClassName.Location = new System.Drawing.Point(123, 139);
+            this.txtClassName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtClassName.Name = "txtClassName";
+            this.txtClassName.Size = new System.Drawing.Size(379, 33);
+            this.txtClassName.TabIndex = 11;
+            this.txtClassName.Text = "bunifuMaterialTextbox1";
+            this.txtClassName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
             // frmAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(593, 486);
+            this.Controls.Add(this.txtClassName);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.pnMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -126,5 +186,7 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipseMainFrm;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipseMainLab;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipseBtnMin;
+        private Bunifu.Framework.UI.BunifuFlatButton btnAdd;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtClassName;
     }
 }

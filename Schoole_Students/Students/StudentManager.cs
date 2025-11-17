@@ -17,13 +17,13 @@ namespace Schoole_Students.Students
         IClassRooms rooms_manager = new ClassRoomsManager();
         IStudents students_manager = new StudentsManager();
         BindingList<Student> studentList;
-        Dictionary<int, string> roomDictionary;
+        BindingList<ClassRoom> roomList;
 
-        public frmStudentManager(BindingList<Student> studentList, Dictionary<int, string> roomDictionary)
+        public frmStudentManager(BindingList<Student> studentList, BindingList<ClassRoom> roomList)
         {
             InitializeComponent();          
             this.studentList = studentList;
-            this.roomDictionary = roomDictionary;
+            this.roomList = roomList;
 
         }
 
@@ -63,14 +63,14 @@ namespace Schoole_Students.Students
 
         private void btnAddStudents_Click(object sender, EventArgs e)
         {
-            frmAddStudent fad = new frmAddStudent(studentList, roomDictionary);
+            frmAddStudent fad = new frmAddStudent(studentList, roomList);
             fad.MdiParent = this;
             fad.Show();
         }
 
         private void btnUpdateStudents_Click(object sender, EventArgs e)
         {
-            frmUpdateStudent fud = new frmUpdateStudent(studentList, roomDictionary);
+            frmUpdateStudent fud = new frmUpdateStudent(studentList, roomList);
             fud.MdiParent = this;
             fud.Show();
         }

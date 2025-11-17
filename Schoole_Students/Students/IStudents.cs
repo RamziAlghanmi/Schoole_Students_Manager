@@ -12,6 +12,7 @@ namespace Schoole_Students.Students
     public interface IStudents
     {
         void addStudent(Student st);
+        int getNewId();
         BindingList<Student> getAllStudents();
         void updateStudent(Student st);
         void deleteStudent(int id);

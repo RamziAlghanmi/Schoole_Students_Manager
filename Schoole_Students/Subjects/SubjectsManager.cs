@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,10 +10,12 @@ namespace Schoole_Students.Subjects
 {
     public class SubjectsManager : ISubjects
     {
+        private int new_id;
 
-        public List<Subject> getAllSubjects()
+        public int getNewId() { return new_id; }
+        public BindingList<Subject>  getAllSubjects()
         {
-            List<Subject> subjects = new List<Subject>();
+            BindingList<Subject> subjects = new BindingList<Subject>();
             using (var g_subjects = new SchooleDBContext())
             {
                 var sus = g_subjects.SUBJECTS.ToList();
@@ -28,12 +31,14 @@ namespace Schoole_Students.Subjects
         {
             using(var g_subjects = new SchooleDBContext())
             {
-                g_subjects.SUBJECTS.Add(new SUBJECTS
+                SUBJECTS SU = new SUBJECTS
                 {
                     NAME = su.Subject_Name,
                     CLASS_ID = su.Class_Id,
                     AUTHER = su.Subject_Auther
-                });
+                };
+                g_subjects.SUBJECTS.Add(SU);
+                this.new_id = SU.ID;
                
             }
         }
@@ -57,7 +62,7 @@ namespace Schoole_Students.Subjects
                 g_subjects.SUBJECTS.Remove(s);
             }
         }
-        public bool found(List<Subject> list, short id)
+        public bool found(BindingList<Subject> list, short id)
         {
             for (int i = 0; i < list.Count; i++)
             {
@@ -67,6 +72,18 @@ namespace Schoole_Students.Subjects
                 }
             }
             return false;
+        }
+
+        public int search(BindingList<Subject> list, short id)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i].Subject_Id == id)
+                {
+                    return i;
+                }
+            }
+            return -1;
         }
 
     }

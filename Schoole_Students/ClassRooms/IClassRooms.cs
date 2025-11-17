@@ -11,6 +11,7 @@ namespace Schoole_Students.ClassRooms
     {
         
         void addClassRoom(ClassRoom cr);
+        int getNewId();
         BindingList<ClassRoom> getAllClassRooms();
         Dictionary<int, string> getRoomDictionary(BindingList<ClassRoom> roomList);
         BindingList<Student> getCustomStudents(BindingList<Student> all_students, int class_id);

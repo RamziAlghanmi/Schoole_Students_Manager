@@ -10,7 +10,8 @@ namespace Schoole_Students.Students
 {
     public class StudentsManager :IStudents
     {
-        
+        private int new_id;
+        public int getNewId() { return new_id; }
         public BindingList<Student> getAllStudents()
         {
          BindingList<Student> students = new BindingList<Student>();
@@ -31,14 +32,21 @@ namespace Schoole_Students.Students
         {
            using(var g_students = new SchooleDBContext())
             {
-                g_students.STUDENTS.Add(new STUDENTS
+                STUDENTS ST = new STUDENTS
                 {
                     NAME = st.Student_Name,
                     ADDRESS = st.Student_Address,
-                    BIRTH =st.Student_Date,PHOTO= st.Student_Photo,
-                    CLASS_ID=st.Class_Id, GENDER=st.Student_Gender,
-                    PHONE= st.Student_Phone, EMAILE=st.Student_Emaile});
+                    BIRTH = st.Student_Date,
+                    PHOTO = st.Student_Photo,
+                    CLASS_ID = st.Class_Id,
+                    GENDER = st.Student_Gender,
+                    PHONE = st.Student_Phone,
+                    EMAILE = st.Student_Emaile
+                };
+                g_students.STUDENTS.Add(ST);
+                
                 g_students.SaveChanges();
+                this.new_id = ST.Id;
             }
             
         }

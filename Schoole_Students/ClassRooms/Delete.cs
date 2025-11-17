@@ -14,10 +14,12 @@ namespace Schoole_Students.ClassRooms
     {
         IClassRooms rooms_manager = new ClassRoomsManager();
         BindingList<ClassRoom> roomList;
+        
         public frmDelete(BindingList<ClassRoom> roomList)
         {
             InitializeComponent();
             this.roomList = roomList;
+           
         }
 
         private void btnExit_Click(object sender, EventArgs e)

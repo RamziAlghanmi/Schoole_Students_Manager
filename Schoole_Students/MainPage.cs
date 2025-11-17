@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Schoole_Students.Students;
 using Schoole_Students.ClassRooms;
+using Schoole_Students.Subjects;
+
 
 namespace Schoole_Students
 {
@@ -18,7 +20,7 @@ namespace Schoole_Students
         IStudents students_manager = new StudentsManager();
         BindingList<ClassRoom> roomList;          
         BindingList<Student> studentList;
-        Dictionary< int, string> roomDictionary;
+        BindingList<Subject> subjectList;
         public frmMainPage()
         {
             InitializeComponent();
@@ -65,13 +67,13 @@ namespace Schoole_Students
 
         private void btnStudents_Click(object sender, EventArgs e)
         {
-            frmStudentManager fsm = new frmStudentManager(studentList, roomDictionary);
+            frmStudentManager fsm = new frmStudentManager(studentList, roomList);
             fsm.ShowDialog();
         }
 
         private void btnClassRooms_Click(object sender, EventArgs e)
         {
-            frmClassRoomManager fcrm = new frmClassRoomManager(roomList,studentList);
+            frmClassRoomManager fcrm = new frmClassRoomManager(roomList);
             fcrm.ShowDialog();
         }
 
@@ -79,7 +81,7 @@ namespace Schoole_Students
         {
             this.roomList = new BindingList<ClassRoom>(rooms_manager.getAllClassRooms());
             this.studentList = new BindingList<Student>(students_manager.getAllStudents());
-            this.roomDictionary = new Dictionary<int, string>(rooms_manager.getRoomDictionary(roomList));
+           
             foreach(ClassRoom room in roomList ) {
                 room.Students = rooms_manager.getCustomStudents(studentList, room.Class_Room_Id);
             }

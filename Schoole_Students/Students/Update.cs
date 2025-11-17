@@ -17,20 +17,19 @@ namespace Schoole_Students.Students
         byte[] image;
         IStudents students_manager = new StudentsManager();
         BindingList<Student> studentList;
-        Dictionary<int, string> roomDictionary;
-        public frmUpdateStudent(BindingList<Student> studentList, Dictionary<int, string> roomDictionary)
+        BindingList<ClassRoom> roomList;
+        public frmUpdateStudent(BindingList<Student> studentList, BindingList<ClassRoom> roomList)
         {
             InitializeComponent();
             this.studentList = studentList;
-            this.roomDictionary = roomDictionary;
+            this.roomList = roomList;
         }
        
         private void loadToComboBox()
         {
-            cbxRooms.DisplayMember = "value";
-            cbxRooms.ValueMember = "key";
-            cbxRooms.DataSource = new BindingSource(roomDictionary, null);
-
+            cbxRooms.DisplayMember = "Class_Room_Name";
+            cbxRooms.ValueMember = "Class_Room_Id";
+            cbxRooms.DataSource = new BindingSource(roomList, null);
         }
         // دالة لتحويل الصورة ال byte  لتخزينها على قاعدة البيانات
         public byte[] imageToByte(Image img)

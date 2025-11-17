@@ -11,7 +11,9 @@ namespace Schoole_Students.ClassRooms
 {
     public class ClassRoomsManager : IClassRooms
     {
-        
+        private int new_id;
+       
+        public int getNewId() { return new_id; }
         public BindingList<ClassRoom> getAllClassRooms()
         {
             BindingList<ClassRoom> rooms = new BindingList<ClassRoom>();
@@ -31,8 +33,10 @@ namespace Schoole_Students.ClassRooms
         {
            using (var class_rooms = new SchooleDBContext())
             {
-                class_rooms.CLASSROOMS.Add(new CLASSROOMS {NAME = cr.Class_Room_Name, MAXCAPACITY = cr.Max_Capacity });
+                CLASSROOMS room = new CLASSROOMS { NAME = cr.Class_Room_Name, MAXCAPACITY = cr.Max_Capacity };
+                class_rooms.CLASSROOMS.Add(room);
                 class_rooms.SaveChanges();
+                this.new_id = room.ID;
             }
         }
 

@@ -113,6 +113,7 @@
             this.cbxRooms.Size = new System.Drawing.Size(240, 32);
             this.cbxRooms.TabIndex = 11;
             this.cbxRooms.SelectedIndexChanged += new System.EventHandler(this.cbxRooms_SelectedIndexChanged);
+            this.cbxRooms.Validating += new System.ComponentModel.CancelEventHandler(this.cbxRooms_Validating);
             // 
             // frmAddStudent
             // 
