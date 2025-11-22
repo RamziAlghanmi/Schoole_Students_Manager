@@ -171,6 +171,7 @@
             this.btnStudents.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.btnStudents.IsTab = false;
             this.btnStudents.Location = new System.Drawing.Point(6, 87);
+            this.btnStudents.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStudents.Name = "btnStudents";
             this.btnStudents.Normalcolor = System.Drawing.Color.CadetBlue;
             this.btnStudents.OnHovercolor = System.Drawing.Color.Teal;
@@ -208,6 +209,7 @@
             this.btnClassRooms.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.btnClassRooms.IsTab = false;
             this.btnClassRooms.Location = new System.Drawing.Point(6, 154);
+            this.btnClassRooms.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClassRooms.Name = "btnClassRooms";
             this.btnClassRooms.Normalcolor = System.Drawing.Color.CadetBlue;
             this.btnClassRooms.OnHovercolor = System.Drawing.Color.Teal;
@@ -246,6 +248,7 @@
             this.btnSubjects.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.btnSubjects.IsTab = false;
             this.btnSubjects.Location = new System.Drawing.Point(6, 424);
+            this.btnSubjects.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSubjects.Name = "btnSubjects";
             this.btnSubjects.Normalcolor = System.Drawing.Color.CadetBlue;
             this.btnSubjects.OnHovercolor = System.Drawing.Color.Teal;
@@ -323,13 +326,13 @@
             this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.groupBox2.Location = new System.Drawing.Point(12, 50);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(545, 539);
+            this.groupBox2.Size = new System.Drawing.Size(545, 485);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
             // frmMainPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.CausesValidation = false;

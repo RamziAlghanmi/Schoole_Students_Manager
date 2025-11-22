@@ -27,3 +27,31 @@ D:\Working Files\C#\Schoole_Students Manager\Schoole_Students\obj\Debug\Schoole_
 D:\Working Files\C#\Schoole_Students Manager\Schoole_Students\obj\Debug\Schoole_Students.Students.frmAddStudent.resources
 D:\Working Files\C#\Schoole_Students Manager\Schoole_Students\obj\Debug\Schoole_Students.Students.frmDeleteStudent.resources
 D:\Working Files\C#\Schoole_Students Manager\Schoole_Students\obj\Debug\Schoole_Students.Students.frmUpdateStudent.resources
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\bin\Debug\Schoole.mdf
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\bin\Debug\Schoole_log.ldf
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\bin\Debug\Schoole_Students.exe.config
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\bin\Debug\Schoole_Students.exe
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\bin\Debug\Schoole_Students.pdb
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\bin\Debug\EntityFramework.dll
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\bin\Debug\EntityFramework.xml
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\obj\Debug\Schoole_Students.csproj.AssemblyReference.cache
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\obj\Debug\Schoole_Students.csproj.SuggestedBindingRedirects.cache
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\obj\Debug\Schoole_Students.ClassRooms.frmAdd.resources
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\obj\Debug\Schoole_Students.ClassRooms.frmClassRoomManager.resources
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\obj\Debug\Schoole_Students.ClassRooms.frmDelete.resources
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\obj\Debug\Schoole_Students.ClassRooms.frmShow.resources
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\obj\Debug\Schoole_Students.ClassRooms.frmUpdate.resources
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\obj\Debug\Schoole_Students.frmMainPage.resources
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\obj\Debug\Schoole_Students.Properties.Resources.resources
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\obj\Debug\Schoole_Students.Students.frmAddStudent.resources
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\obj\Debug\Schoole_Students.Students.frmDeleteStudent.resources
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\obj\Debug\Schoole_Students.Students.frmShowStudents.resources
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\obj\Debug\Schoole_Students.Students.frmStudentManager.resources
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\obj\Debug\Schoole_Students.Students.frmUpdateStudent.resources
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\obj\Debug\Schoole_Students.csproj.GenerateResource.cache
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\obj\Debug\Schoole_Students.csproj.CoreCompileInputs.cache
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\obj\Debug\Schoole_Students.csproj.CopyComplete
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\obj\Debug\Schoole_Students.exe
+C:\Users\Bahr Technology\Desktop\Schoole_Students_Manager\Schoole_Students\obj\Debug\Schoole_Students.pdb

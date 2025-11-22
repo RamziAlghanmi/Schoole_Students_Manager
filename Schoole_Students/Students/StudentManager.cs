@@ -65,7 +65,9 @@ namespace Schoole_Students.Students
         {
             frmAddStudent fad = new frmAddStudent(studentList, roomList);
             fad.MdiParent = this;
-            fad.Show();
+           fad.Show();
+            
+            
         }
 
         private void btnUpdateStudents_Click(object sender, EventArgs e)

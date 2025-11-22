@@ -27,9 +27,9 @@ namespace Schoole_Students.Students
        
         private void loadToComboBox()
         {
-            cbxRooms.DisplayMember = "Class_Room_Name";
-            cbxRooms.ValueMember = "Class_Room_Id";
-            cbxRooms.DataSource = new BindingSource(roomList, null);
+            cbxSerchName.DisplayMember = "Class_Room_Name";
+            cbxSerchName.ValueMember = "Class_Room_Id";
+            cbxSerchName.DataSource = new BindingSource(roomList, null);
         }
         // دالة لتحويل الصورة ال byte  لتخزينها على قاعدة البيانات
         public byte[] imageToByte(Image img)
@@ -48,11 +48,13 @@ namespace Schoole_Students.Students
         private void frmUpdateStudent_Load(object sender, EventArgs e)
         {
             loadToComboBox();
+           //تخفي بيانات الطلاب عند البحث
+            pernalStudent.Visible = false;
         }
 
         private void cbxRooms_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.class_id = Convert.ToInt32(cbxRooms.SelectedValue);
+            this.class_id = Convert.ToInt32(cbxSerchName.SelectedValue);
         }
     }
 }

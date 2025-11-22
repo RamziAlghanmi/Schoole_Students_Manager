@@ -69,6 +69,7 @@ namespace Schoole_Students
         {
             frmStudentManager fsm = new frmStudentManager(studentList, roomList);
             fsm.ShowDialog();
+            this.Hide();
         }
 
         private void btnClassRooms_Click(object sender, EventArgs e)
